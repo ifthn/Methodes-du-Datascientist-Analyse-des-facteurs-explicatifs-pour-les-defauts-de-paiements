@@ -307,7 +307,7 @@ grid.arrange(apr,may,jun,jul,aug,sep,ncol=3)
 M <- cor(subset(base, select = c(LIMIT_BAL,BILL_AMT1,BILL_AMT2,BILL_AMT3,BILL_AMT4,BILL_AMT5,PAY_AMT1,PAY_AMT2,PAY_AMT3,PAY_AMT4,PAY_AMT5,PAY_AMT6)))
 corrplot(M, method="number")
 
-#Interpretation: On voit en regardant les correlations, qu'il y a une faible correlation entre le montant de credit, les factures et les paiements. On remarque logiquement une forte corrélation entre les montants de factures eux memes car cela reflete les montants cumules
+#Interpretation: On voit en regardant les correlations, qu'il y a une faible correlation entre le montant de credit, les factures et les paiements. On remarque logiquement une forte corrÃ©lation entre les montants de factures eux memes car cela reflete les montants cumules
 
 ###Probabilites de montant de credit par age
 
@@ -323,10 +323,10 @@ ggplot(aes(x=AGE,y=LIMIT_BAL/1000),data=subset(base,!is.na(Age.categories)))+
   geom_smooth(stat='summary', fun=quantile, fun.args = list(probs = 0.9), color = 'black', linetype=2)
 
 
-#Interpretation: On trace ici la limite de montant de credit par tranche d'age et on remarque aisément les limites de 500 000 et 200 000 ce qui est 95% et 50%: 
+#Interpretation: On trace ici la limite de montant de credit par tranche d'age et on remarque aisÃ©ment les limites de 500 000 et 200 000 ce qui est 95% et 50%: 
 #  95% ont des montants de credits egaux ou inferieurs a 500 000 et 50% a 200 000.
 #  La ligne bleue etant la moyenne du montant des credits aux clients, l'ecart entre la ligne bleue et rouge montre que la banque donne un plus gros montant que les 50% de probabilite.
-# On peut aussi interpreter les probabilites comme etant l'intervalle de confiance et l'exposition de la banque: La banque peut donc se permettre d'avoir des defaut de 500 000 ou plus a seulement 5% si il y a du défaut. 
+# On peut aussi interpreter les probabilites comme etant l'intervalle de confiance et l'exposition de la banque: La banque peut donc se permettre d'avoir des defaut de 500 000 ou plus a seulement 5% si il y a du dÃ©faut. 
 
 
 
@@ -370,7 +370,7 @@ grid.arrange(graph4, graph5, graph6,ncol=2)
 #################
 
 
-#Quel groupe d'age fait le plus de défaut
+#Quel groupe d'age fait le plus de dÃ©faut
 ggplot(data = base, aes(x = AGE)) + 
   geom_histogram(bins = 50, fill = "purple", col = "blue", alpha = 0.3) + 
   scale_x_continuous(breaks = seq(min(0), max(90), by = 5), na.value = TRUE)
@@ -502,7 +502,7 @@ featurePlot(x = base[, c(1)],
 
 
 #V de Cramer
-# On determine avec le V de Cramer quelles sont les variables les plus liées a la variable a expliquer.
+# On determine avec le V de Cramer quelles sont les variables les plus liÃ©es a la variable a expliquer.
 
 base$ID <- NULL
 par(mfrow = c(1, 1))
@@ -679,7 +679,7 @@ ti <- prop.table(tab,1)[,2] # affichage % en ligne
 old <- par(no.readonly = TRUE)
 par(mar = c(7, 4, 2, 0))
 barplot(as.numeric(ti), col=gray(0:length(ti)/length(ti)),
-        names.arg=names(ti), ylab='Taux de défaut', ylim=c(0,0.8), cex.names = 0.8, las=3)
+        names.arg=names(ti), ylab='Taux de dÃ©faut', ylim=c(0,0.8), cex.names = 0.8, las=3)
 abline(v=c(28.82),col="red")
 par(old)
 
@@ -803,7 +803,7 @@ ti <- prop.table(tab,1)[,2] # affichage % en ligne
 old <- par(no.readonly = TRUE)
 par(mar = c(7, 4, 2, 0))
 barplot(as.numeric(ti), col=gray(0:length(ti)/length(ti)),
-        names.arg=names(ti), ylab='Taux de défaut', ylim=c(0,0.8), cex.names = 0.8, las=3)
+        names.arg=names(ti), ylab='Taux de dÃ©faut', ylim=c(0,0.8), cex.names = 0.8, las=3)
 abline(v=c(28.82),col="red")
 par(old)
 
@@ -825,11 +825,11 @@ tot = a+b+c+d
 bc = (a+d)/(tot)*100
 bc
 
-#Score derreur sur l'Ã©chantillon total
+#Score derreur sur l'ÃƒÂ©chantillon total
 se = a/(a+c)*100
 se
 
-#Score predit sur l'Ã©chantillon total
+#Score predit sur l'ÃƒÂ©chantillon total
 sp = d/(b+d)*100
 sp
 
